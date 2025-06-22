@@ -11,15 +11,18 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
-  text-align: right;
+  text-align: unset;
   padding: 2rem;
   box-sizing: border-box;
 }
 
 #bg-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  display: block;        /* Make it a block element to kill inline weirdness */
+  position: fixed;       /* Detach it from parent layout */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
   opacity: 0;
@@ -28,6 +31,7 @@ body {
 
 #poem {
   font-family: 'Playfair Display', serif;
+  text-align: right;
   font-size: 1.5rem;
   margin-top: 20vh;
   opacity: 0;
