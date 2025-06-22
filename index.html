@@ -9,8 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Crimson+Text&display=swap" rel="stylesheet">
 </head>
 <body>
-  <img id="bg-image" src="assets/cliff.png" alt="Cliff Background" />
+  <nav id="navbar">
+    <ul>
+      <li><a href="#landing">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
   <div id="landing">
+    <img id="bg-image" src="assets/cliff.png" alt="Cliff Background" />
     <audio id="bg-music" src="assets/music.mp3" autoplay loop></audio>
     <div id="poem">“The wind remembers what I forgot.”</div>
     <div class="scroll-hint">↓ scroll to explore</div>
@@ -31,6 +39,37 @@
         </div>
       </div>
     </div>
+
+    <div class="project">
+      <div class="thumb">
+        <img src="assets/thumb1.jpg" data-gif="assets/gif1.gif" alt="Project Thumbnail" />
+      </div>
+      <div class="info">
+        <a href="#" class="title">Project Title</a>
+        <p class="blurb">A short description of your amazing project.</p>
+        <button class="more-toggle">click to see more</button>
+        <div class="details hidden">
+          <p>Gameplay: Feature 1, Feature 2, Emotional Damage System™.</p>
+          <p class="poem">“Even machines dream when you teach them how.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="thumb">
+        <img src="assets/thumb1.jpg" data-gif="assets/gif1.gif" alt="Project Thumbnail" />
+      </div>
+      <div class="info">
+        <a href="#" class="title">Project Title</a>
+        <p class="blurb">A short description of your amazing project.</p>
+        <button class="more-toggle">click to see more</button>
+        <div class="details hidden">
+          <p>Gameplay: Feature 1, Feature 2, Emotional Damage System™.</p>
+          <p class="poem">“Even machines dream when you teach them how.”</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
