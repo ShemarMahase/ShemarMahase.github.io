@@ -20,19 +20,18 @@ const hint = document.querySelector(".scroll-hint");
 const projects = document.querySelectorAll(".project");
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    const el = entry.target;
-    const rect = el.getBoundingClientRect();
-    const inCenter = rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25;
+  entries.forEach(entry => {
+    const rect = entry.boundingClientRect;
+    const centerTrigger = rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25;
 
-    if (entry.isIntersecting && inCenter) {
-      el.classList.add("visible");
+    if (entry.isIntersecting && centerTrigger) {
+      entry.target.classList.add("visible");
     } else {
-      el.classList.remove("visible");
+      entry.target.classList.remove("visible");
     }
   });
 }, {
-  threshold: Array.from({ length: 101 }, (_, i) => i / 100)
+  threshold: 0.1
 });
 
 projects.forEach(project => observer.observe(project));

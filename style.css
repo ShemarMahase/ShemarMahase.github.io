@@ -128,13 +128,18 @@ html, body {
   flex-wrap: wrap;
   opacity: 0;
   transform: translateX(-100px);
+  transform: translateY(60px);
   will-change: transform, opacity;
   transition: opacity 0.6s ease, transform 0.6s ease;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed #444;
 }
 
 .project.visible {
   opacity: 1;
   transform: translateX(0);
+  transform: translateY(0);
 }
 
 
