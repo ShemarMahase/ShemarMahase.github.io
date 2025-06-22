@@ -1,39 +1,47 @@
-
-body {
+/* Reset & base styles */
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   font-family: 'Crimson Text', serif;
   background-color: #111;
   color: #f4f4f4;
   overflow-x: hidden;
 }
 
-#landing {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  text-align: unset;
-  padding: 2rem;
-  box-sizing: border-box;
-}
+/* === LANDING ZONE === */
 
 #bg-image {
-  display: block;        /* Make it a block element to kill inline weirdness */
-  position: fixed;       /* Detach it from parent layout */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
+  object-fit: cover; /* THIS is the magic sauce */
   z-index: -1;
   opacity: 0;
   animation: fadeIn 2s ease-in forwards;
 }
 
+#landing {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 #poem {
   font-family: 'Playfair Display', serif;
-  text-align: right;
   font-size: 1.5rem;
   margin-top: 20vh;
+  text-align: right;
   opacity: 0;
   animation: fadeIn 3s 2s forwards;
 }
@@ -46,6 +54,8 @@ body {
   opacity: 0.6;
 }
 
+/* === PROJECTS SECTION === */
+
 #projects {
   padding: 3rem;
 }
@@ -54,6 +64,7 @@ body {
   display: flex;
   margin-bottom: 2rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .thumb img {
@@ -63,6 +74,7 @@ body {
   transition: 0.3s ease-in-out;
 }
 
+/* Optional: Preview GIF hover (this might not work as intended unless you script it) */
 .thumb img:hover {
   content: attr(data-gif);
 }
@@ -95,43 +107,9 @@ body {
   font-style: italic;
 }
 
+/* === ANIMATIONS === */
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Crimson Text', serif;
-  background-color: #111;
-  color: #f4f4f4;
-  overflow-x: hidden;
-}
-
-#landing {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 2rem;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-#bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0;
-  animation: fadeIn 2s ease-in forwards;
 }
